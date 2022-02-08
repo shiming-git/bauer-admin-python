@@ -1,6 +1,6 @@
 # bauer-admin-python 低代码开发平台
 
-#### 后端项目：123
+#### 后端项目：
 
 ​	GitHup：https://github.com/shiming-git/bauer-admin-python
 
