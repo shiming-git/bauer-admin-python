@@ -1,0 +1,5 @@
+<el-col :span="24">
+    <el-form-item :label-width="labelWidth" label="${fieldDescribe}" prop="${fieldName}">
+        <el-input v-model="model.${fieldName}" show-word-limit maxlength="${fieldLength}" placeholder="请输入${fieldDescribe}"></el-input>
+    </el-form-item>
+</el-col>

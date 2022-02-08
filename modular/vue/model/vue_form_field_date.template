@@ -1,0 +1,5 @@
+<el-col :span="24">
+    <el-form-item label="${fieldDescribe}" prop="${fieldName}" :label-width="labelWidth">
+        <el-date-picker v-model="model.${fieldName}" type="${dateType}" placeholder="请选择${fieldDescribe}"></el-date-picker>
+    </el-form-item>
+</el-col>

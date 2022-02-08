@@ -1,0 +1,5 @@
+<el-col :span="24">
+    <el-form-item label="${fieldDescribe}" prop="${fieldName}" :label-width="labelWidth">
+        <x-radio v-model="model.${fieldName}" dict="${dictString}"></x-radio>
+    </el-form-item>
+</el-col>
