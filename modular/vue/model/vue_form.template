@@ -83,7 +83,7 @@ export default {
           this.$message.error(res.message);
           return;
         }
-        this.tableMode = res.data
+        this.model = res.data;
       });
     },
   },

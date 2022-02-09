@@ -1,29 +1,21 @@
 # -*- coding:utf-8 -*-
 
 import uuid
-from templates.webHandle import webHandler
-from tool import Result
-from tool import ResultCode
-from templates import Handler
-from tool.MySqlServe import MysqlUtile
-from config import configMysql
-from modularHandle.OnlHandle import OnlGenerate
+from handlers.webHandle import webHandler
+from libs import Result
+from libs import ResultCode
+from handlers import Handler
+from config import configSys
 
-
-"""
-服务请求路径区
-"""
-(r"/sys/sys_users", SysSysUsers.SysSysUsers),
-(r"/sys/sys_users/one", SysSysUsers.SysSysUsersOne)
 
 """
 服务代码区
 """
-class SysSysUsers(webHandler):
+class OnlOnlDict(webHandler):
     """
-    用户表
+    数据字典
     """
-    TABLENAME = "sys_users"
+    TABLENAME = "onl_dict"
 
     def get(self, *args, **kwargs):
         dataList = self.query_list(self.TABLENAME)
@@ -51,11 +43,11 @@ class SysSysUsers(webHandler):
             return self.finish(ResultCode.DATABASE_OPERATE_ERROR())
         return self.finish(Result.success())
 
-class SysSysUsersOne(webHandler):
+class OnlOnlDictOne(webHandler):
     """
     查询单个数据
     """
-    TABLENAME = "sys_users"
+    TABLENAME = "onl_dict"
 
     def get(self, *args, **kwargs):
         data = self.queryOne(self.TABLENAME)

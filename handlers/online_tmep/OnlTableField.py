@@ -3,6 +3,7 @@
 from handlers.webHandle import webHandler
 from libs import Result
 from libs import ResultCode
+from handlers import Handler
 
 """
 服务代码区
@@ -54,3 +55,14 @@ class OnlOnlTableFieldOne(webHandler):
         return self.finish(Result.success(data))
 
 
+class OnlTableFieldName(webHandler):
+    """
+    获取字段名
+    """
+    def get(self, *args, **kwargs):
+        table_name = self.get_argument("table_name")
+        if not table_name:
+            return self.finish(Result.error(ResultCode.DATABASE_OPERATE_ERROR))
+
+        dataList = Handler.get_table_field(table_name)
+        return self.finish(Result.success(dataList))

@@ -22,3 +22,6 @@ ExFieId = 60 * 60
 # 用户信息缓存
 CacheUserInfo = "cache:user:"
 ExUserInfo = 2 * 60 * 60
+# 缓存字典
+CacheDict = "cache:dict:"
+ExDict = 2 * 60 * 60

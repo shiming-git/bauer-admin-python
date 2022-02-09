@@ -3,8 +3,9 @@
 from tornado.web import Application
 
 from handlers.online_tmep import OnlTable
+from handlers.online_tmep import OnlTableField
+from handlers.online_tmep import OnlDict
 from handlers.online_tmep import OnlDictField
-from handlers.online_tmep import OnlOnlTableField
 
 url = Application([
     (r"/onl/onl_table", OnlTable.OnlTableList),
@@ -14,10 +15,19 @@ url = Application([
     (r"/onl/read_table_all", OnlTable.ReadTableAll),
     (r"/onl/onl_generation", OnlTable.OnlGeneration),
     (r"/onl/onl_table_create_form", OnlTable.OnlTableCreateForm),
+    (r"/onl/onl_field_name", OnlTableField.OnlTableFieldName),
 
-    (r"/onl/onl_field_list", OnlDictField.OnlTableFieldList),
-    (r"/onl/onl_field_name", OnlDictField.OnlTableFieldName),
-    (r"/onl/onl_table_field", OnlOnlTableField.OnlOnlTableField),
-    (r"/onl/onl_table_field/one", OnlOnlTableField.OnlOnlTableFieldOne),
+    # 字段
+    (r"/onl/onl_table_field", OnlTableField.OnlOnlTableField),
+    (r"/onl/onl_table_field/one", OnlTableField.OnlOnlTableFieldOne),
+
+    # 字典
+    (r"/onl/onl_dict", OnlDict.OnlOnlDict),
+    (r"/onl/onl_dict/one", OnlDict.OnlOnlDictOne),
+
+    # 数据字典
+    (r"/onl/onl_dict_field", OnlDictField.OnlOnlDictField),
+    (r"/onl/onl_dict_field/one", OnlDictField.OnlOnlDictFieldOne),
+    (r"/onl/onl_dict_code", OnlDictField.OnlDictCode),
 
 ])

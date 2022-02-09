@@ -193,11 +193,17 @@ class webHandler(RequestHandler):
         field_keys = []
         for item in field_list:
             if item.get("field_is_key", None) and item.get("field_is_key", None) == "PRI":
-                field_keys.append(item.get("field_name", None))
+                field_name = item.get("field_name", None)
+                if field_name:
+                    field_name = "`" + field_name + "`"
+                field_keys.append(field_name)
                 continue
 
             if item.get("show_form", None) and item.get("show_form", None) == "Y":
-                field_keys.append(item.get("field_name", None))
+                field_name = item.get("field_name", None)
+                if field_name:
+                    field_name = "`" + field_name + "`"
+                field_keys.append(field_name)
 
         field_str = str.join(",", field_keys)
         if not field_str:
@@ -238,11 +244,17 @@ class webHandler(RequestHandler):
         field_keys = []
         for item in field_list:
             if item.get("field_is_key", None) and item.get("field_is_key", None) == "PRI":
-                field_keys.append(item.get("field_name", None))
+                field_name = item.get("field_name", None)
+                if field_name:
+                    field_name = "`" + field_name + "`"
+                field_keys.append(field_name)
                 continue
 
             if item.get("show_list", None) and item.get("show_list", None) == "Y":
-                field_keys.append(item.get("field_name", None))
+                field_name = item.get("field_name", None)
+                if field_name:
+                    field_name = "`" + field_name + "`"
+                field_keys.append(field_name)
 
         # 获取字段参数
         param_list = []
@@ -406,6 +418,9 @@ class webHandler(RequestHandler):
             if not field:
                 continue
 
+            if field_name:
+                field_name = "`" + field_name + "`"
+
             field_keys.append(field_name)
             param_list.append(field)
 
@@ -464,6 +479,9 @@ class webHandler(RequestHandler):
             # 跳过空参数
             if not field:
                 continue
+
+            if field_name:
+                field_name = "`" + field_name + "`"
 
             # 默认条件是主键
             if field_is_key:
