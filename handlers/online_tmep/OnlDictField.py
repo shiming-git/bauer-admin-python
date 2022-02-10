@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 
+import json
 from handlers.webHandle import webHandler
 from libs import Result
 from libs import ResultCode
@@ -79,7 +80,8 @@ class OnlDictCode(webHandler):
         redis = RedisServer.RedisUtil()
         # 查询字典
         if not table or not value:
-            list_dict = redis.get(configSys.CacheDict + code)
+            redis_key = configSys.CacheDict + code
+            list_dict = redis.get(redis_key)
             if list_dict:
                 return self.finish(Result.success(list_dict))
 
@@ -87,7 +89,7 @@ class OnlDictCode(webHandler):
             db = MysqlUtile()
             list_dict = db.query(sql, code)
             db.dispose()
-            redis.set(configSys.CacheDict + code, list_dict, configSys.ExDict)
+            redis.set(redis_key, json.dumps(list_dict), configSys.ExDict)
 
             return self.finish(Result.success(list_dict))
 
