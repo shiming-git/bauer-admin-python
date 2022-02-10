@@ -83,7 +83,7 @@ class OnlDictCode(webHandler):
             redis_key = configSys.CacheDict + code
             list_dict = redis.get(redis_key)
             if list_dict:
-                return self.finish(Result.success(list_dict))
+                return self.finish(Result.success(json.loads(list_dict)))
 
             sql = "SELECT `code`,`table` AS `value` FROM onl_dict_field WHERE dict_code = %s ORDER BY sort ASC"
             db = MysqlUtile()
