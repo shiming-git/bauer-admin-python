@@ -11,7 +11,7 @@
  Target Server Version : 80026
  File Encoding         : 65001
 
- Date: 04/02/2022 18:49:53
+ Date: 10/02/2022 15:15:54
 */
 
 SET NAMES utf8mb4;
@@ -54,7 +54,7 @@ CREATE TABLE `onl_dict`  (
 -- ----------------------------
 -- Records of onl_dict
 -- ----------------------------
-INSERT INTO `onl_dict` VALUES ('1', 'onl-表类型', 'onl_table_type', '表单开发 表类型', '2022-01-01 00:48:24', NULL, NULL, NULL);
+INSERT INTO `onl_dict` VALUES ('1', 'onl-表类型', 'onl_table_type', '表单开发 表类型', '2022-01-01 00:48:24', '2022-02-08 23:12:17', '超级管理员', NULL);
 INSERT INTO `onl_dict` VALUES ('2', 'onl-表分类', 'onl_table_class', '表单开发 表分类', '2022-01-01 00:49:43', NULL, NULL, NULL);
 INSERT INTO `onl_dict` VALUES ('3', '单选框-是否', 'button_radio', '按钮单选框', '2022-01-01 00:51:05', NULL, NULL, NULL);
 
@@ -113,8 +113,11 @@ CREATE TABLE `onl_table`  (
 INSERT INTO `onl_table` VALUES ('1482751525217505280', '2022-01-17 00:28:06', '2022-01-17 01:19:43', '超级管理员', '超级管理员', 'demo', '测试', 2, 'single', NULL, 'Y', 'N', 'single', 800, 'N');
 INSERT INTO `onl_table` VALUES ('1482756754273079296', '2022-01-17 00:48:53', '2022-02-04 18:28:30', '超级管理员', '超级管理员', 'onl_table', 'on表单设计', 7, 'single', 'None', 'Y', 'N', 'single', 800, 'Y');
 INSERT INTO `onl_table` VALUES ('1482791317351305216', '2022-01-17 03:06:13', '2022-02-04 18:47:19', '超级管理员', '超级管理员', 'sys_role', '用户角色表', 12, 'single', NULL, 'Y', 'N', 'single', 800, 'N');
+INSERT INTO `onl_table` VALUES ('1489554312228114432', '2022-02-04 18:59:57', '2022-02-04 19:20:30', '超级管理员', '超级管理员', 'sys_users', '用户表', 5, 'single', NULL, 'Y', 'Y', 'single', 800, 'N');
+INSERT INTO `onl_table` VALUES ('1489554312228114433', '2022-02-04 18:59:57', NULL, NULL, '超级管理员', 'sys_role_model', '用户模块更新', 1, NULL, NULL, 'Y', 'Y', NULL, 800, 'N');
+INSERT INTO `onl_table` VALUES ('1489554312228114434', '2022-02-04 18:59:57', NULL, NULL, '超级管理员', 'sys_role_user', '用户已角色关系表', 1, NULL, NULL, 'Y', 'Y', NULL, 800, 'N');
 INSERT INTO `onl_table` VALUES ('34e564bfd6da43c69c9ddc7ccfec160c', '2022-01-01 04:07:14', NULL, NULL, '超级管理员', 'onl_dict_field', '字典字段', 1, NULL, NULL, 'Y', 'Y', NULL, 800, 'N');
-INSERT INTO `onl_table` VALUES ('41eb17dad04643b4b1f13c9ddc0660d6', '2022-01-01 04:07:14', NULL, NULL, '超级管理员', 'onl_dict', '数据字典', 1, NULL, NULL, 'Y', 'Y', NULL, 800, 'N');
+INSERT INTO `onl_table` VALUES ('41eb17dad04643b4b1f13c9ddc0660d6', '2022-01-01 04:07:14', '2022-02-08 22:28:49', '超级管理员', '超级管理员', 'onl_dict', '数据字典', 2, NULL, NULL, 'Y', 'Y', NULL, 800, 'N');
 INSERT INTO `onl_table` VALUES ('6e13c500d939440fb1ddb92975f54493', '2022-01-01 03:40:25', NULL, NULL, '超级管理员', 'onl_table_field', 'onl字段名', 1, NULL, NULL, 'Y', 'Y', NULL, 800, 'N');
 
 -- ----------------------------
@@ -161,7 +164,7 @@ CREATE TABLE `onl_table_field`  (
 -- ----------------------------
 INSERT INTO `onl_table_field` VALUES ('09e23683018e4d23a6af7157099d8279', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'show_list', '显示列表', 20, 0, NULL, 'varchar', '', 'YES', '', 18, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('0e2d27187459404d900902b429314289', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'validation_rules', '校验规则', 255, 0, NULL, 'varchar', '', 'YES', '', 25, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `onl_table_field` VALUES ('11767361e2a54137b513963a2b4e42fb', '2022-01-01 04:07:14', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_dict', 'create_user', '创建人', 50, 0, NULL, 'varchar', '', 'YES', '', 8, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('11767361e2a54137b513963a2b4e42fb', '2022-02-08 22:28:49', '超级管理员', '2022-02-08 22:28:49', '超级管理员', 'onl_dict', 'create_user', '创建人', 50, 0, NULL, 'varchar', '', 'YES', '', 8, 'Y', 'Y', 'Y', NULL, NULL, 200, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('1482751525225893888', '2022-01-17 01:19:43', '超级管理员', '2022-01-17 01:19:43', '超级管理员', 'demo', 'id', 'ID', 50, 0, NULL, 'varchar', 'PRI', 'NO', NULL, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('1482751525326557184', '2022-01-17 01:19:43', '超级管理员', '2022-01-17 01:19:43', '超级管理员', 'demo', 'create_user', '创建人', 50, 0, NULL, 'varchar', '', 'YES', NULL, 2, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('1482751525351723008', '2022-01-17 01:19:43', '超级管理员', '2022-01-17 01:19:43', '超级管理员', 'demo', 'create_time', '创建时间', 0, 0, NULL, 'datetime', '', 'YES', NULL, 3, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
@@ -188,23 +191,38 @@ INSERT INTO `onl_table_field` VALUES ('1482791353476845569', '2022-02-04 18:47:1
 INSERT INTO `onl_table_field` VALUES ('1482791353476845570', '2022-02-04 18:47:19', '超级管理员', '2022-02-04 18:47:19', '超级管理员', 'sys_role', 'roleName', '角色名称 ', 50, 0, NULL, 'varchar', '', 'YES', '', 2, 'Y', 'Y', 'Y', NULL, NULL, 200, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('1482791353476845571', '2022-02-04 18:47:19', '超级管理员', '2022-02-04 18:47:19', '超级管理员', 'sys_role', 'roleSort', '角色排序', 0, 0, NULL, 'int', '', 'YES', '', 4, 'Y', 'Y', 'Y', NULL, NULL, 200, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('1482791353476845572', '2022-02-04 18:47:19', '超级管理员', '2022-02-04 18:47:19', '超级管理员', 'sys_role', 'roleStat', '角色状态', 1, 0, NULL, 'enum', '', 'YES', '', 3, 'Y', 'Y', 'Y', NULL, NULL, 200, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('1489554312400080896', '2022-02-04 19:20:30', '超级管理员', '2022-02-04 19:20:30', '超级管理员', 'sys_users', 'avatarUrl', '用户头像', 255, 0, NULL, 'varchar', '', 'YES', '', 5, 'Y', 'Y', 'Y', NULL, NULL, 200, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('1489554312400080897', '2022-02-04 19:20:30', '超级管理员', '2022-02-04 19:20:30', '超级管理员', 'sys_users', 'loginDate', '登录时间', 0, 0, NULL, 'datetime', '', 'YES', '', 7, 'Y', 'Y', 'Y', NULL, NULL, 200, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('1489554312400080898', '2022-02-04 19:20:30', '超级管理员', '2022-02-04 19:20:30', '超级管理员', 'sys_users', 'loginState', '登录状态', 0, 0, NULL, 'int', '', 'YES', '', 10, 'Y', 'Y', 'Y', NULL, NULL, 200, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('1489554312400080899', '2022-02-04 18:59:57', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'sys_role_model', 'modelID', '模块ID', NULL, 0, NULL, 'int', 'PRI', 'NO', '', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('1489554312400080900', '2022-02-04 19:20:30', '超级管理员', '2022-02-04 19:20:30', '超级管理员', 'sys_users', 'newDate', '创建时间', 0, 0, NULL, 'datetime', '', 'YES', '', 6, 'Y', 'Y', 'Y', NULL, NULL, 200, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('1489554312400080901', '2022-02-04 19:20:30', '超级管理员', '2022-02-04 19:20:30', '超级管理员', 'sys_users', 'passWord', '用户密码', 255, 0, NULL, 'varchar', '', 'YES', '', 3, 'Y', 'Y', 'Y', NULL, NULL, 200, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('1489554312400080902', '2022-02-04 19:20:30', '超级管理员', '2022-02-04 19:20:30', '超级管理员', 'sys_users', 'realName', '用户名称', 32, 0, NULL, 'varchar', '', 'YES', '', 4, 'Y', 'Y', 'Y', NULL, NULL, 200, 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('1489554312400080903', '2022-02-04 18:59:57', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'sys_role_model', 'roleID', '角色ID', NULL, 0, NULL, 'int', 'PRI', 'NO', '', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('1489554312400080904', '2022-02-04 18:59:57', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'sys_role_user', 'roleID', '角色ID  ', NULL, 0, NULL, 'int', 'PRI', 'NO', '', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('1489554312400080905', '2022-02-04 19:20:30', '超级管理员', '2022-02-04 19:20:30', '超级管理员', 'sys_users', 'sex', '用户的性别', 0, 0, NULL, 'int', '', 'YES', '', 11, 'Y', 'Y', 'Y', NULL, NULL, 200, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('1489554312400080906', '2022-02-04 19:20:30', '超级管理员', '2022-02-04 19:20:30', '超级管理员', 'sys_users', 'state', '状态', 0, 0, NULL, 'int', '', 'YES', '', 8, 'Y', 'Y', 'Y', NULL, NULL, 200, 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('1489554312400080907', '2022-02-04 18:59:57', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'sys_role_user', 'userID', '用户ID ', 50, 0, NULL, 'varchar', 'PRI', 'NO', '', 2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('1489554312400080908', '2022-02-04 19:20:30', '超级管理员', '2022-02-04 19:20:30', '超级管理员', 'sys_users', 'userID', '用户ID', 50, 0, NULL, 'varchar', 'PRI', 'NO', '', 1, NULL, NULL, NULL, NULL, NULL, 200, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('1489554312400080909', '2022-02-04 19:20:30', '超级管理员', '2022-02-04 19:20:30', '超级管理员', 'sys_users', 'userName', '用户账号', 32, 0, NULL, 'varchar', '', 'YES', '', 2, 'Y', 'Y', 'Y', NULL, NULL, 200, 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('1489554312400080910', '2022-02-04 19:20:30', '超级管理员', '2022-02-04 19:20:30', '超级管理员', 'sys_users', 'weixinUser', '绑定微信', 50, 0, NULL, 'varchar', '', 'YES', '', 9, 'Y', 'Y', 'Y', NULL, NULL, 200, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('18ec0b1cfd5d4bd0a29ae80abfe444b3', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'field_length', '字段长度', NULL, 0, NULL, 'int', '', 'YES', '', 9, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('1b06088cb5a74dd89c609cbfb9781e2f', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'field_type', '字段类型', 255, 0, NULL, 'varchar', '', 'YES', '', 12, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('1bc9d9bf9d344b7e9f04f036f1272a6f', '2022-01-01 04:07:14', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_dict_field', 'sort', '排序', NULL, 0, NULL, 'int', '', 'YES', '', 5, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('22adf5954dd24731b13dca193cfb3452', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'show_form', '显示表单', 20, 0, NULL, 'varchar', '', 'YES', '', 17, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('372de80c007b4a2690af889639f40d38', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'main_table_name', '主表名', 255, 0, NULL, 'varchar', '', 'YES', '', 30, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('41e733a002404fef929fa873aac37243', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'field_describe', '字段描述', 255, 0, NULL, 'varchar', '', 'YES', '', 8, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `onl_table_field` VALUES ('5b2cd39e7526418e909bb836c6388c56', '2022-01-01 04:07:14', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_dict', 'create_time', '创建时间', NULL, 0, NULL, 'datetime', '', 'YES', '', 5, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('5b2cd39e7526418e909bb836c6388c56', '2022-02-08 22:28:49', '超级管理员', '2022-02-08 22:28:49', '超级管理员', 'onl_dict', 'create_time', '创建时间', 0, 0, NULL, 'datetime', '', 'YES', '', 5, 'Y', 'Y', 'Y', NULL, NULL, 200, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('649ed372cba749cc8a37c54ce298722f', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'is_sort', '是否排序', 20, 0, NULL, 'varchar', '', 'YES', '', 19, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `onl_table_field` VALUES ('656dd2939a8940a0b2f595d506dffb2c', '2022-01-01 04:07:14', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_dict', 'id', '主键', 50, 0, NULL, 'varchar', 'PRI', 'NO', '', 1, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('656dd2939a8940a0b2f595d506dffb2c', '2022-02-08 22:28:49', '超级管理员', '2022-02-08 22:28:49', '超级管理员', 'onl_dict', 'id', '主键', 50, 0, NULL, 'varchar', 'PRI', 'NO', '', 1, 'N', 'N', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('6c47caa78fc14177a07a138f35846d95', '2022-01-01 04:07:14', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_dict_field', 'code', '编码', 255, 0, NULL, 'varchar', '', 'YES', '', 3, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('7635b4fc42874853b97089b28711b1bd', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'dictionary_text', '字典Text', 255, 0, NULL, 'varchar', '', 'YES', '', 29, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('78c516df062d479a8b4dcf511b7e7e6f', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'field_name', '字段名', 50, 0, NULL, 'varchar', '', 'YES', '', 7, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `onl_table_field` VALUES ('7994e832efa74ba79a35bbe3542861b4', '2022-01-01 04:07:14', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_dict', 'code', '编码', 255, 0, NULL, 'varchar', '', 'YES', '', 3, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `onl_table_field` VALUES ('7aa404e940804f8395b48492f952c91e', '2022-01-01 04:07:14', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_dict', 'describe', '描述', 65535, 0, NULL, 'text', '', 'YES', '', 4, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('7994e832efa74ba79a35bbe3542861b4', '2022-02-08 22:28:49', '超级管理员', '2022-02-08 22:28:49', '超级管理员', 'onl_dict', 'code', '编码', 255, 0, NULL, 'varchar', '', 'YES', '', 3, 'Y', 'Y', 'Y', NULL, NULL, 200, NULL, NULL, NULL, 'Y', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('7aa404e940804f8395b48492f952c91e', '2022-02-08 22:28:49', '超级管理员', '2022-02-08 22:28:49', '超级管理员', 'onl_dict', 'describe', '描述', 65535, 0, NULL, 'text', '', 'YES', '', 4, 'Y', 'Y', 'Y', NULL, NULL, 200, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('7ba6e07497a14e8fb380f678f636a7b6', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'create_user', '创建人', 50, 0, NULL, 'varchar', '', 'YES', '', 3, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('7e1d61b818c544dda9ae08cf71021f1c', '2022-01-01 04:07:14', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_dict_field', 'create_time', '创建时间', NULL, 0, NULL, 'datetime', '', 'YES', '', 6, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `onl_table_field` VALUES ('7e9e396b912a4e22a73e0746d4bc3d11', '2022-01-01 04:07:14', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_dict', 'updata_time', '更新时间', NULL, 0, NULL, 'datetime', '', 'YES', '', 6, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('7e9e396b912a4e22a73e0746d4bc3d11', '2022-02-08 22:28:49', '超级管理员', '2022-02-08 22:28:49', '超级管理员', 'onl_dict', 'updata_time', '更新时间', 0, 0, NULL, 'datetime', '', 'YES', '', 6, 'N', 'N', 'N', NULL, NULL, 200, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('825797fb07004979b34678bf02e534f3', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'is_read_only', '是否只读', 20, 0, NULL, 'varchar', '', 'YES', '', 20, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('8dd5c7e73101424fa96cf1c3b5564c79', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'validation_required', '校验必填', 255, 0, NULL, 'varchar', '', 'YES', '', 26, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('9b293c70a7304b84beafbbad6ecf30d2', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'create_time', '创建时间', NULL, 0, NULL, 'datetime', '', 'YES', '', 2, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
@@ -213,7 +231,7 @@ INSERT INTO `onl_table_field` VALUES ('9f6b5c94c59845c2adcdd7cbd77205fa', '2022-
 INSERT INTO `onl_table_field` VALUES ('a1b1755cb9724f018b508dba7ecb602e', '2022-01-01 04:07:14', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_dict_field', 'table', '名称', 255, 0, NULL, 'varchar', '', 'YES', '', 2, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('a444b8f5d5ea4e48bcc80e93b662e497', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'dictionary_table', '字典Table', 255, 0, NULL, 'varchar', '', 'YES', '', 27, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('a900bb5d8d504aa2bc4f90d0406a5c6d', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'field_is_null', '允许为空', 20, 0, NULL, 'varchar', '', 'YES', '', 14, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `onl_table_field` VALUES ('b2770209d3fe44f8a4bee837c5a46cdf', '2022-01-01 04:07:14', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_dict', 'table', '名称', 255, 0, NULL, 'varchar', '', 'YES', '', 2, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('b2770209d3fe44f8a4bee837c5a46cdf', '2022-02-08 22:28:49', '超级管理员', '2022-02-08 22:28:49', '超级管理员', 'onl_dict', 'table', '名称', 255, 0, NULL, 'varchar', '', 'YES', '', 2, 'Y', 'Y', 'Y', NULL, NULL, 200, NULL, NULL, NULL, 'Y', NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('b3c8967f4ae242feae32db772ae7d149', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'is_query', '是否查询', 20, 0, NULL, 'varchar', '', 'YES', '', 23, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('b7c0a4da74524e7c8a9f603119770fa5', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'updata_user', '更新人', 50, 0, NULL, 'varchar', '', 'YES', '', 5, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('b8a21647117d42b6b38a86f84355b011', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'field_is_key', '是否主键', 20, 0, NULL, 'varchar', '', 'YES', '', 13, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
@@ -232,7 +250,7 @@ INSERT INTO `onl_table_field` VALUES ('ea696ff927144947ae1bc8f9fde9a418', '2022-
 INSERT INTO `onl_table_field` VALUES ('ed7e6e889ae148eab8ecd9e412038909', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'control_width', '控件长度', NULL, 0, NULL, 'int', '', 'YES', '', 22, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('eda065e583f145329761bc842423a84e', '2022-01-01 04:07:14', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_dict_field', 'updata_time', '更新时间', NULL, 0, NULL, 'datetime', '', 'YES', '', 7, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('f3935c70470a4e56a2d7084529df9a43', '2022-01-01 04:07:14', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_dict_field', 'describe', '描述', 65535, 0, NULL, 'text', '', 'YES', '', 4, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-INSERT INTO `onl_table_field` VALUES ('f7a925d99e18439d86069b6137a7e4c2', '2022-01-01 04:07:14', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_dict', 'updata_user', '更新人', 50, 0, NULL, 'varchar', '', 'YES', '', 7, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `onl_table_field` VALUES ('f7a925d99e18439d86069b6137a7e4c2', '2022-02-08 22:28:49', '超级管理员', '2022-02-08 22:28:49', '超级管理员', 'onl_dict', 'updata_user', '更新人', 50, 0, NULL, 'varchar', '', 'YES', '', 7, 'N', 'N', 'N', NULL, NULL, 200, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 INSERT INTO `onl_table_field` VALUES ('fc58d02da6e74122a628957167f55635', '2022-01-01 03:40:25', 'f7de76ef4dab4a3288f7f8641ee6eed7', NULL, NULL, 'onl_table_field', 'main_table_field', '主表字段', 255, 0, NULL, 'varchar', '', 'YES', '', 31, 'Y', 'Y', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- ----------------------------
@@ -246,7 +264,7 @@ CREATE TABLE `sys_choice_configure`  (
   `sup` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '分组',
   `sort` int(0) NULL DEFAULT NULL COMMENT '排序',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '选项配置' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '选项配置' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_choice_configure
@@ -332,7 +350,7 @@ CREATE TABLE `sys_model`  (
   `pageName` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '页面名称',
   `modelPath` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '模块路径',
   PRIMARY KEY (`modelID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '功能模块' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '功能模块' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_model
@@ -349,6 +367,7 @@ INSERT INTO `sys_model` VALUES (11, '角色管理', '/sys/sysRole', 1, 5, 'el-ic
 INSERT INTO `sys_model` VALUES (12, '用户管理', '/sys/sysUser', 1, 6, 'el-icon-user', '0', 'sys/sysUser', '/sys/sysUser');
 INSERT INTO `sys_model` VALUES (18, 'online开发', '/online', -1, 3, 'el-icon-cpu', '0', 'online', '/online');
 INSERT INTO `sys_model` VALUES (19, 'online在线开发', '/online/onlTable', 18, 1, 'el-icon-document-remove', '0', 'online/onlTable', '/online/onlTable');
+INSERT INTO `sys_model` VALUES (20, 'online数据字典', '/online/OnlDictList', 18, 2, 'el-icon-collection', '0', 'online\\OnlDictList', '/online/OnlDictList');
 
 -- ----------------------------
 -- Table structure for sys_public
@@ -411,6 +430,7 @@ INSERT INTO `sys_role_model` VALUES (1, 11);
 INSERT INTO `sys_role_model` VALUES (1, 12);
 INSERT INTO `sys_role_model` VALUES (1, 18);
 INSERT INTO `sys_role_model` VALUES (1, 19);
+INSERT INTO `sys_role_model` VALUES (1, 20);
 INSERT INTO `sys_role_model` VALUES (7, 13);
 INSERT INTO `sys_role_model` VALUES (7, 15);
 INSERT INTO `sys_role_model` VALUES (10, 1);
