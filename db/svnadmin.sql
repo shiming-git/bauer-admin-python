@@ -11,7 +11,7 @@
  Target Server Version : 80026
  File Encoding         : 65001
 
- Date: 10/02/2022 15:15:54
+ Date: 08/03/2022 23:46:29
 */
 
 SET NAMES utf8mb4;
@@ -264,7 +264,7 @@ CREATE TABLE `sys_choice_configure`  (
   `sup` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '分组',
   `sort` int(0) NULL DEFAULT NULL COMMENT '排序',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '选项配置' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '选项配置' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_choice_configure
@@ -319,15 +319,13 @@ INSERT INTO `sys_config` VALUES ('weixiOpenId', '微信标识', '13456789', 'tex
 DROP TABLE IF EXISTS `sys_file`;
 CREATE TABLE `sys_file`  (
   `id` varchar(36) CHARACTER SET utf32 COLLATE utf32_general_ci NOT NULL COMMENT 'ID ',
-  `fileName` varchar(255) CHARACTER SET utf32 COLLATE utf32_general_ci NOT NULL COMMENT '文件名',
-  `fileFullName` varchar(255) CHARACTER SET utf32 COLLATE utf32_general_ci NULL DEFAULT NULL COMMENT '文件全路径',
-  `fileOriginalName` varchar(255) CHARACTER SET utf32 COLLATE utf32_general_ci NULL DEFAULT NULL COMMENT '文件原始名',
-  `fileSize` int(0) NULL DEFAULT NULL COMMENT '文件大小',
+  `file_name` varchar(255) CHARACTER SET utf32 COLLATE utf32_general_ci NOT NULL COMMENT '文件名',
+  `file_original_name` varchar(255) CHARACTER SET utf32 COLLATE utf32_general_ci NULL DEFAULT NULL COMMENT '文件原始名',
+  `file_size` int(0) NULL DEFAULT NULL COMMENT '文件大小',
   `created_by` varchar(255) CHARACTER SET utf32 COLLATE utf32_general_ci NULL DEFAULT NULL COMMENT '创建人',
   `created_date` datetime(0) NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '创建时间',
-  `last_modified_by` varchar(255) CHARACTER SET utf32 COLLATE utf32_general_ci NULL DEFAULT NULL COMMENT '最后更新者',
-  `last_modified_date` datetime(0) NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP(0) COMMENT '最后更新时间',
-  `is_del` tinyint(0) NULL DEFAULT 0 COMMENT '是否删除',
+  `file_format` varchar(50) CHARACTER SET utf32 COLLATE utf32_general_ci NULL DEFAULT NULL COMMENT '文件格式',
+  `file_url` varchar(255) CHARACTER SET utf32 COLLATE utf32_general_ci NULL DEFAULT NULL COMMENT '文件路径',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf32 COLLATE = utf32_general_ci COMMENT = '文件管理' ROW_FORMAT = Dynamic;
 
@@ -397,7 +395,7 @@ CREATE TABLE `sys_role`  (
   `roleSort` int(0) NULL DEFAULT NULL COMMENT '角色排序',
   `roleStat` enum('0','1') CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '角色状态  0启用 1停用',
   PRIMARY KEY (`roleID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户角色表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '用户角色表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_role

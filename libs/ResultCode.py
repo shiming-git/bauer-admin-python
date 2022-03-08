@@ -183,16 +183,26 @@ def PARAM_IS_NULL():
 def QUERY_MODE_IS_NULL():
     return {"code": "A0411", "message": "查询模式为空"}
 
+
+def USER_UPLOAD_FILE_ERROR():
+    return {"code": "A0700", "message": "用户上传文件异常"}
+
+
+def USER_UPLOAD_FILE_TYPE_NOT_MATCH():
+    return {"code": "A0701", "message": "用户上传文件类型不匹配"}
+
+
+def USER_UPLOAD_FILE_SIZE_EXCEEDS():
+    return {"code": "A0702", "message": "用户上传文件太大"}
+
+
+def USER_UPLOAD_IMAGE_SIZE_EXCEEDS():
+    return {"code": "A0703", "message": "用户上传图片太大"}
+
+
+
     # INVALID_REQUEST_ERROR("A4003", "请求方式 {0} 错误 ! 请使用 {1} 方式"),
     # AUTHORIZED_GRANT_ERROR("A4003", "授权失败"),
-    #
-
-    # USER_UPLOAD_FILE_ERROR("A0700", "用户上传文件异常"),
-    # USER_UPLOAD_FILE_TYPE_NOT_MATCH("A0701", "用户上传文件类型不匹配"),
-    # USER_UPLOAD_FILE_SIZE_EXCEEDS("A0702", "用户上传文件太大"),
-    # USER_UPLOAD_IMAGE_SIZE_EXCEEDS("A0703", "用户上传图片太大"),
-    #
-
     # SYSTEM_EXECUTION_TIMEOUT("B0100", "系统执行超时"),
     # SYSTEM_ORDER_PROCESSING_TIMEOUT("B0100", "系统订单处理超时"),
     #

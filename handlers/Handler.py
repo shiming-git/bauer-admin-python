@@ -6,7 +6,7 @@ from libs.TokenJWT import Token
 import hashlib
 from config import configSys
 from libs.IdWorker import IdWorker
-
+import os
 
 # 检测token是否过期
 # 返回 None token无效

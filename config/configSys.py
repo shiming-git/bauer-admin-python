@@ -11,6 +11,7 @@ secret_key = "svn"
 # token忽略URL
 ignore = (
     "/sys/login/LoginAccountPassword",
+    "/sys/file/upload"
 )
 
 # 缓存导航
@@ -25,3 +26,5 @@ ExUserInfo = 2 * 60 * 60
 # 缓存字典
 CacheDict = "cache:dict:"
 ExDict = 2 * 60 * 60
+# 文件路径
+filePath = "F:/opt/server_file"
