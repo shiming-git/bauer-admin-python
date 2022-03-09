@@ -11,29 +11,11 @@
  Target Server Version : 80026
  File Encoding         : 65001
 
- Date: 10/03/2022 01:06:33
+ Date: 10/03/2022 01:08:42
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
-
--- ----------------------------
--- Table structure for demo
--- ----------------------------
-DROP TABLE IF EXISTS `demo`;
-CREATE TABLE `demo`  (
-  `id` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT 'ID',
-  `create_user` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建人',
-  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
-  `updata_user` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '更新人',
-  `updata_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
-  `demo` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '测试',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci COMMENT = '测试' ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of demo
--- ----------------------------
 
 -- ----------------------------
 -- Table structure for onl_dict
