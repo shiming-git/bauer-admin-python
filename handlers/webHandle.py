@@ -284,13 +284,13 @@ class webHandler(RequestHandler):
             sql += f" WHERE {where_str}"
             sql_page += f" WHERE {where_str}"
 
-        # 判断分页
-        if page_num and per_page_data:
-            sql += self.paging_handler(page_num, per_page_data)
-
         # 排序条件
         if order and column:
             sql += f" ORDER BY {column} {order} "
+
+        # 判断分页
+        if page_num and per_page_data:
+            sql += self.paging_handler(page_num, per_page_data)
 
         logging.info("sql语句: %s", sql)
         db = MysqlUtile()

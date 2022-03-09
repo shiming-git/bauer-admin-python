@@ -20,4 +20,6 @@ url = Application([
 
     (r"/sys/file/upload", sysFile.FileUpload),  # 文件上传
     (r"/sys/file/dowload/(\w*).(\w*)", sysFile.FileDowload),    # 文件下载
+    (r"/sys/file/sys_file", sysFile.FileSysFile),
+    (r"/sys/file/sys_file/one", sysFile.FileSysFileOne),
 ])
