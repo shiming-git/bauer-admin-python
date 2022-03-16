@@ -130,7 +130,7 @@ class OnlTableAll(webHandler):
 
         sql = """
         INSERT INTO onl_table(id,create_time,create_user,table_name,table_describe,table_edition,table_paging,
-        table_tree,dialog_width,dialog_is_whole) 
+        table_tree,dialog_width,dialog_full) 
         VALUES(%s,NOW(),%s,%s,%s,%s,%s,%s,%s,%s)
         """
         db = MysqlUtile()

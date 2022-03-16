@@ -298,6 +298,7 @@ class webHandler(RequestHandler):
             sql += self.paging_handler(page_num, per_page_data)
 
         logging.info("sql语句: %s", sql)
+        logging.info("sql计数：%s", sql_page)
         db = MysqlUtile()
         dataList = db.query(sql, param_list)
         count = db.get(sql_page, param_list)
@@ -391,7 +392,7 @@ class webHandler(RequestHandler):
         page_num = int(page_num)
         per_page_data = int(per_page_data)
         s1 = (page_num - 1) * per_page_data
-        s2 = page_num * per_page_data
+        s2 = per_page_data
         sql = f" LIMIT {s1},{s2} "
         return sql
 
