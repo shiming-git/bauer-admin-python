@@ -1,3 +1,5 @@
+import copy
+
 from tornado.web import RequestHandler
 from handlers import Handler
 from libs import Result, ResultCode
@@ -242,16 +244,19 @@ class webHandler(RequestHandler):
             return None
 
         field_keys = []
+        field_dict = {}
         for item in field_list:
+            field_name = item.get("field_name", None)
+
             if item.get("field_is_key", None) and item.get("field_is_key", None) == "PRI":
-                field_name = item.get("field_name", None)
+                field_dict[field_name] = item
                 if field_name:
                     field_name = "`" + field_name + "`"
                 field_keys.append(field_name)
                 continue
 
             if item.get("show_list", None) and item.get("show_list", None) == "Y":
-                field_name = item.get("field_name", None)
+                field_dict[field_name] = item
                 if field_name:
                     field_name = "`" + field_name + "`"
                 field_keys.append(field_name)
@@ -300,6 +305,27 @@ class webHandler(RequestHandler):
 
         # 数据类型处理
         dataList = self.dataListHandler(field_list, dataList)
+        # 数据映射处理
+
+        for row in dataList:
+            deep_row = copy.deepcopy(row)
+            for key in deep_row:
+                item = field_dict[key]
+                if not item:
+                    continue
+                code = item.get("dictionary_code", None)
+                table = item.get("dictionary_table", None)
+                value = item.get("dictionary_text", None)
+                where = ""
+
+                if not code or code == 'None':
+                    continue
+
+                dict_codes = self.getDictCode(code, table, value, where)
+                for dic in dict_codes:
+                    if dic["code"] == str(row[key]):
+                        fid_name = key + "_describe"
+                        row[fid_name] = dic["value"]
 
         obj = {
             "data": dataList,
@@ -536,5 +562,39 @@ class webHandler(RequestHandler):
             if field_is_null == "NO":
                 if not data_dict.get(field_name, None):
                     return {"code": field_name, "name": field_describe}
-
         return None
+
+    def getDictCode(self, code, table, value, where):
+        """
+        字典查询
+        code 字典/表字段
+        table 表名
+        value 值名称
+        where 条件
+        """
+        redis = RedisUtil()
+        # 查询字典
+        if not table or not value:
+            redis_key = configSys.CacheDict + code
+            list_dict = redis.get(redis_key)
+            if list_dict:
+                return json.loads(list_dict)
+
+            sql = "SELECT `code`,`table` AS `value` FROM onl_dict_field WHERE dict_code = %s ORDER BY sort ASC"
+            db = MysqlUtile()
+            list_dict = db.query(sql, code)
+            db.dispose()
+            redis.set(redis_key, json.dumps(list_dict), configSys.ExDict)
+            return json.loads(list_dict)
+
+        sql = f""" SELECT `{code}` AS `code`,`{value}` AS `value` FROM `{table}` """
+
+        if where:
+            sp_list = where.split(",")
+            w = str.join(sp_list, " AND ")
+            sql += f"""  WHERE dict_code =  {w}"""
+
+        db = MysqlUtile()
+        list_dict = db.query(sql)
+        db.dispose()
+        return json.loads(list_dict)

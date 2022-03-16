@@ -30,6 +30,11 @@ class OnlOnlDictField(webHandler):
             return self.finish(ResultCode.PARAM_IS_NULL())
         if index <= 0:
             return self.finish(ResultCode.DATABASE_OPERATE_ERROR())
+
+        dict_code = self.get_body_parameter("dict_code")
+        if dict_code:
+            Handler.deleteCacheDict(dict_code)
+
         return self.finish(Result.success(index))
 
     def put(self, *args, **kwargs):
@@ -38,12 +43,21 @@ class OnlOnlDictField(webHandler):
             return self.finish(ResultCode.PARAM_IS_NULL())
         if index <= 0:
             return self.finish(ResultCode.DATABASE_OPERATE_ERROR())
+
+        dict_code = self.get_body_parameter("dict_code")
+        if dict_code:
+            Handler.deleteCacheDict(dict_code)
+
         return self.finish(Result.success(index))
 
     def delete(self, *args, **kwargs):
         index = self.deleteHandle(self.TABLENAME)
         if index <= 0:
             return self.finish(ResultCode.DATABASE_OPERATE_ERROR())
+
+        dict_code = self.get_body_parameter("dict_code")
+        if dict_code:
+            Handler.deleteCacheDict(dict_code)
         return self.finish(Result.success())
 
 
@@ -66,6 +80,7 @@ class OnlDictCode(webHandler):
     code 字典/表字段
     table 表名
     value 值名称
+    where 条件
     """
 
     def get(self, *args, **kwargs):
@@ -77,31 +92,5 @@ class OnlDictCode(webHandler):
         if not code:
             return self.finish(ResultCode.PARAM_IS_NULL())
 
-        redis = RedisServer.RedisUtil()
-        # 查询字典
-        if not table or not value:
-            redis_key = configSys.CacheDict + code
-            list_dict = redis.get(redis_key)
-            if list_dict:
-                return self.finish(Result.success(json.loads(list_dict)))
-
-            sql = "SELECT `code`,`table` AS `value` FROM onl_dict_field WHERE dict_code = %s ORDER BY sort ASC"
-            db = MysqlUtile()
-            list_dict = db.query(sql, code)
-            db.dispose()
-            redis.set(redis_key, json.dumps(list_dict), configSys.ExDict)
-
-            return self.finish(Result.success(list_dict))
-
-        sql = f""" SELECT `{code}` AS `code`,`{value}` AS `value` FROM `{table}` """
-
-        if where:
-            sp_list = where.split(",")
-            w = str.join(sp_list, " AND ")
-            sql += f"""  WHERE dict_code =  {w}"""
-
-        db = MysqlUtile()
-        list_dict = db.query(sql)
-        db.dispose()
-
+        list_dict = self.getDictCode(code, table, value, where)
         return self.finish(Result.success(list_dict))

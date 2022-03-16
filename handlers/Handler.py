@@ -148,9 +148,20 @@ def sqlInHandle(values: str) -> str:
 
     return str.join(",", val_list)
 
+
 def getSnowflakeId():
     """
     获取ID
     :return:
     """
     return str(WORKER.get_id())
+
+
+def deleteCacheDict(code):
+    """
+    删除表字典缓存
+    :return:
+    """
+    key = configSys.CacheDict + code
+    RD.delele(key)
+    return True
