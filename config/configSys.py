@@ -10,7 +10,7 @@ secret_key = "svn"
 
 # token忽略URL
 ignore = (
-    "/sys/login/LoginAccountPassword",
+
 )
 
 # 缓存导航

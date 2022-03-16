@@ -17,6 +17,10 @@ userName: "admin"
 
 class LoginAccountPassword(webHandler):
 
+    # 忽略认证
+    def prepare(self):
+        pass
+
     def get(self, *args, **kwargs):
         return self.finish(Result.errorMapp(ResultCode.INVALID_REQUEST_ERROR))
 
